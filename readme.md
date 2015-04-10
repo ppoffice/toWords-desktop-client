@@ -30,8 +30,6 @@
 
 软件仅供技术学习及交流使用，请勿用于商业及非法用途，如产生法律纠纷与本人无关。
 
-[Issues List](Github Issues List URL goes here).
-
 ## 许可
 
 MIT
