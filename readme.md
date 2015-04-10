@@ -8,6 +8,10 @@
 
 直接单击本页面右侧的**Download ZIP**下载软件压缩包，解压后运行toWords.exe即可。
 
+## 源码
+
+本软件基于[heX](https://github.com/netease-youdao/hex)项目进行开发，相关源码位于toWords目录下。
+
 ## 软件截图
 
 ![Screenshot 1](https://github.com/ppoffice/toWords-desktop-client/blob/master/screenshots/screenshot1.png?raw=true)
