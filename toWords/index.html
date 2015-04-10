@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>toWords</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="./lib/css/jquery-ui.min.css" type="text/css">
+  <link rel="stylesheet" href="./lib/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="./lib/css/flat-ui.css" type="text/css">
+  <link rel="stylesheet" href="./lib/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="./css/style.css" type="text/css">
+</head>
+<body>
+  <div class="title-bar">
+    <h1 id="title"></h1>
+    <ul class="window-controls right">
+      <li class="control"><a href="#" id="minimize">-</a></li>
+      <li class="control"><a href="#" id="close">×</a></li>
+    </ul>
+  </div>
+  <div class="main wrap">
+    <aside class="siderbar">
+      <div class="avatar">
+        <p id="myAvatar"><img src="./css/images/default-avatar.jpg" alt=""></p>
+        <p id="myName">未登录</p>
+      </div>
+      <ul class="menu" id="main-menu">
+        <li class="menu-item"><a href="#" id="home"><i class="fa fa-home"></i>主页<i class="right arrow"></i></a></li>
+        <li class="menu-item"><a href="#" id="wordlist"><i class="fa fa-check"></i>单词本<i class="right arrow"></i></a></li>
+        <li class="menu-item"><a href="#" id="books"><i class="fa fa-book"></i>课程<i class="right arrow"></i></a></li>
+        <li class="menu-item"><a href="#" id="leaderboard"><i class="fa fa-list-ol"></i>努力榜<i class="right arrow"></i></a></li>
+        <li class="menu-item"><a href="#" id="settings"><i class="fa fa-cogs"></i>设置<i class="right arrow"></i></a></li>
+      </ul>
+    </aside>
+    <div id="main-container" class="content"></div>
+    <div id="main-preloader" class="preloader content"></div>
+  </div>
+  <div id="mask-container"></div>
+  <div id="alertTip" class="palette-default"><p class="text"></p></div>
+  <script type="text/javascript" src="./lib/js/jquery.min.js"></script>
+  <script type="text/javascript" src="./lib/js/jquery.hotkeys.js"></script>
+  <script type="text/javascript" src="./lib/js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="./lib/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./js/config.js"></script>
+  <script type="text/javascript" src="./js/hex.js"></script>
+  <script type="text/javascript" src="./js/ui.js"></script>
+  <script type="text/javascript" src="./js/app.js"></script>
+  <script type="text/javascript" src="./js/toWords/view.js"></script>
+  <script type="text/javascript" src="./js/toWords/modal.js"></script>
+  <script type="text/javascript" src="./js/toWords/controller.js"></script>
+</body>
+</html>

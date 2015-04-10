@@ -1,0 +1,140 @@
+<div class="settings">
+  <h2 class="title">设置</h2>
+  <div class="setting-col">
+    <h3 class="setting-col-header">快捷键</h3>
+    <h4 class="setting-col-sub-header">使用时请关掉中文输入法</h4>
+    <div class="setting-col-body shortcut-key">
+      <label class="radio value-0" data-param="SHORTCUT_KEY_SCHEME" data-value="0"><i>A</i><i>B</i><i>C</i><i>D</i></label>
+      <label class="radio value-1" data-param="SHORTCUT_KEY_SCHEME" data-value="1"><i>1</i><i>2</i><i>3</i><i>4</i></label>
+      <label class="radio value-2" data-param="SHORTCUT_KEY_SCHEME" data-value="2"><i>A</i><i>S</i><i>D</i><i>F</i></label>
+      <label class="radio value-3" data-param="SHORTCUT_KEY_SCHEME" data-value="3"><i>↑</i><i>↓</i><i>←</i><i>→</i></label>
+      <label class="radio value-4" data-param="SHORTCUT_KEY_SCHEME" data-value="4"><i>J</i><i>K</i><i>L</i><i>;</i></label>
+    </div>
+  </div>
+  <div class="setting-col">
+    <h3 class="setting-col-header">声音</h3>
+    <h4 class="setting-col-sub-header">关闭声音将大幅度影响学习质量</h4>
+    <div class="setting-col-body sound">
+      <label class="radio value-1" data-param="SOUND_SETTING" data-value="1"><i>开</i></label>
+      <label class="radio value-0" data-param="SOUND_SETTING" data-value="0"><i>关</i></label>
+    </div>
+  </div>
+  <div class="setting-col">
+    <h3 class="setting-col-header">发音</h3>
+    <div class="setting-col-body accent">
+      <label class="radio value-2" data-param="SOUND_TYPE" data-value="2"><i>英式英语</i></label>
+      <label class="radio value-1" data-param="SOUND_TYPE" data-value="1"><i>美式英语</i></label>
+    </div>
+  </div>
+  <div class="setting-col">
+    <h3 class="setting-col-header">对错反馈</h3>
+    <div class="setting-col-body answer-feedback">
+      <label class="radio value-1" data-param="ANSWER_FEEDBACK" data-value="1"><i>是</i></label>
+      <label class="radio value-0" data-param="ANSWER_FEEDBACK" data-value="0"><i>否</i></label>
+    </div>
+  </div>
+  <div class="setting-col">
+    <h3 class="setting-col-header">倒计时</h3>
+    <div class="setting-col-body countdown">
+      <div class="slider">
+        <div class="slider-progress"></div>
+        <div class="slider-handle" data-param="COUNTDOWN_TIME" data-value="0">
+          <span class="tooltip"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="setting-col">
+    <h3 class="setting-col-header">"我记得"机制</h3>
+    <h4 class="setting-col-sub-header">掌握程度超过一半的单词缓出选项</h4>
+    <div class="setting-col-body iRemember">
+      <label class="checkbox" data-labId="1"><i>开启</i></label>
+    </div>
+  </div>
+  <div class="setting-col">
+    <h3 class="setting-col-header">账号</h3>
+    <div class="setting-col-body iRemember">
+      <button class="btn btn-danger" id="logout">退出登录</button>
+    </div>
+  </div>
+  <div class="setting-col">
+    <h3 class="setting-col-header">关于</h3>
+    <h4 class="setting-col-sub-header">拓词 Windows桌面版，PPOffice设计与编写</h4>
+    <div class="setting-col-body iRemember">
+      <button class="btn btn-info" id="project-homepage">项目主页</button>
+      <button class="btn btn-success" id="feedback">意见反馈</button>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){
+  /* SLIDER DRAG */
+  var dragging = false, iX;
+  $('.slider-handle').mousedown(function(e) {
+    dragging = true;
+    iX = e.clientX - this.offsetLeft;
+    this.setCapture && this.setCapture();
+    $(this).addClass('dragging');
+    return false;
+  });
+  document.onmousemove = function(e) {
+    if (dragging) {
+      var e = e || window.event;
+      var oX = e.clientX - iX;
+      if(oX < 0) oX = 0;
+      else if(oX > $('.slider').width()) oX = $('.slider').width();
+      $('.slider-progress').css('width', oX + "px");
+      $('.slider-handle').css("left", oX + "px");
+      var value = Math.round(5 + oX * 10 / $('.slider').width());
+      $('.slider-handle').attr('data-value', value);
+      return false;
+    }
+  };
+  $(document).mouseup(function(e) {
+    if(dragging) {
+      app.saveSettings($('.slider-handle').attr('data-param'), $('.slider-handle').attr('data-value'), function (success) {
+        if(success && $('#main-container').attr('data-page') == 'settings')
+          ui.settings = $('#main-container').html();
+      });
+    }
+    dragging = false;
+    $('.slider-handle').removeClass('dragging');
+    e.cancelBubble = true;
+  });
+
+  $('.setting-col-body .radio').on('click', function(){
+    $(this).parent('.setting-col-body').find('.radio').removeClass('selected');
+    $(this).addClass('selected');
+    app.saveSettings($(this).attr('data-param'), $(this).attr('data-value'), function (success) {
+      if(success && $('#main-container').attr('data-page') == 'settings')
+        ui.settings = $('#main-container').html();
+    });
+  });
+
+  $('.setting-col-body .checkbox').on('click', function(){
+    $(this).toggleClass('selected');
+    var value = 0;
+    if($(this).hasClass('selected'))
+      value = 1;
+    app.saveLabSettings($(this).attr('data-labId'), value, function (success) {
+      if(success && $('#main-container').attr('data-page') == 'settings')
+        ui.settings = $('#main-container').html();
+    });
+  });
+
+  $('#logout').on('click', function(){
+    app.logout(function () {
+      ui.showAuthDialog();
+    });
+  });
+
+  $('#project-homepage').on('click', function(){
+    hex.openExternal('https://github.com/ppoffice/toWords');
+  });
+
+  $('#feedback').on('click', function(){
+    hex.openExternal('https://github.com/ppoffice/toWords/issues');
+  });
+
+});
+</script>

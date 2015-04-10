@@ -1,0 +1,1200 @@
+@import 'nib'
+
+color-border = #ddd
+color-link = #3498DB
+color-font = #333
+color-font-grey = #999
+color-font-light = #fff
+color-background-light = #fff
+color-background-grey = #eee
+color-main-background = #f7f7f7
+color-siderbar-background = #333
+color-siderbar-background-dark = #222
+color-button-hover-background = rgba(0,0,0,0.1)
+
+color-palette-default = #34495E
+color-palette-danger = #e74c3c
+color-palette-info = #3498db
+color-palette-success = #2ecc71
+color-palette-warning = #f1c40f
+
+layout-titlebar-height = 40px
+layout-siderbar-width = 200px
+layout-alerttip-width = 400px
+layout-alerttip-left = 300px
+layout-outer-progress-radius = 320px
+layout-outer-progress-width = 5px
+layout-inner-progress-radius = 300px
+layout-inner-progress-width = 20px
+layout-start-button-radius = 240px
+layout-mini-progress-radius = 96px
+layout-mini-progress-width = 6px
+layout-slide-board-width = 220px
+layout-slide-board-height = 120px
+layout-slide-board-mini-width = layout-mini-progress-radius - layout-mini-progress-width*2
+layout-slide-board-mini-height = 56px
+
+font-default = 'Microsoft Yahei', 'Microsoft Yahei UI'
+font-default-light = 'Microsoft YaHei Light', 'Microsoft YaHei UI Light'
+font-size = 14px
+line-height = 20px
+
+body
+  top: 0px
+  left: 0px
+  right: 0px
+  bottom: 0px
+  margin: 0px
+  overflow: hidden
+  user-select: none
+  position: absolute
+  line-height: line-height
+  border: 1px solid color-border
+  background: color-main-background
+  
+body, input
+  color: color-font
+  font-family: font-default !important
+  
+p, a, i, span
+  font-size: font-size
+
+a
+  color: color-font
+  text-decoration: none !important
+  &:focus
+    color: color-font
+  &:hover,
+  &:active
+    color: color-link
+
+a, span, button, input
+  outline: none !important
+  
+h1, h2, h3, h4, h5, h6, div
+  cursor: default
+  font-weight: normal
+  font-size: font-size
+  
+ul, ol
+  list-style: none
+  padding: 0px
+  margin: 0px
+  
+::-webkit-scrollbar
+  width: 10px
+  height: 10px
+
+::-webkit-scrollbar-thumb
+  height: 50px
+  background-color: color-button-hover-background
+  outline: 2px solid color-main-background
+  outline-offset: -2px
+  border: 2px solid color-main-background
+
+::-webkit-scrollbar-track-piece
+  background-color: color-main-background
+  -webkit-border-radius: 0
+
+  
+.right
+  float: right
+
+.menu
+  clearfix()
+
+.btn
+  border-radius: 2px
+
+.block
+  display: block
+  
+.palette-default
+  background: color-palette-default
+.palette-danger
+  background: color-palette-danger
+.palette-info
+  background: color-palette-info
+.palette-success
+  background: color-palette-success
+.palette-warning
+  background: color-palette-warning
+
+.logo
+  width: 240px
+  height: 120px
+  margin: 20px auto
+  background: url(images/logo.png) center no-repeat
+  background-size: 242px 65px
+.logo-small
+  height: 80px
+  background-size: 66% 66%
+
+.preloader
+  opacity: 0
+  z-index: -1
+  transition: 0.2s ease-in
+  background: url(images/preloader.gif) center no-repeat, #fff
+  background-size: 64px 64px
+  &.on
+    opacity: 1
+    z-index: 999
+    
+.progress
+  border-radius: 2px 0 0 2px
+    
+#alertTip
+  top: 36px
+  opacity: 0
+  z-index: -1
+  padding: 10px 15px
+  position: absolute
+  left: layout-alerttip-left
+  width: layout-alerttip-width
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3)
+  transition: 0.2s ease
+  &.on
+    opacity: 1
+    z-index: 1041
+  p
+    color: white
+    line-height: line-height
+    margin: 0px
+
+.title-bar
+  position: absolute
+  top: 0px
+  left: 0px
+  right: 0px
+  z-index: 1050
+  #title
+    text-align: center
+    margin: 0px
+    padding: 0px
+    height: layout-titlebar-height
+  
+.window-controls
+  position: absolute
+  right: 0px
+  top: 0px
+  z-index: 1051
+  .control
+    float: left
+    margin: 10px 10px 0 0 
+    a
+      display: block
+      height: 20px
+      width: 20px
+      text-align: center
+      font-size: font-size + 2
+      &:hover,
+      &:active
+        color: color-font
+        background: color-button-hover-background
+    #close
+      &:hover,
+      &:active
+        color: color-font-light
+        background: #E74C3C
+
+.modal
+  .modal-dialog
+    .modal-content
+      border-radius: 0px
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3)
+      border: none
+      .close
+        font-size: font-size + 1
+        text-align: center
+        position: absolute
+        line-height: 20px
+        margin: 10px
+        height: 20px
+        width: 20px
+        opacity: 1
+        z-index: 1
+        right: 0
+        top: 0
+        &:hover
+          color: color-font-light
+          background: color-palette-danger
+
+.col-2
+  width: 45%
+  margin-right: 3%
+  margin-bottom: 20px
+.pad
+  border-radius: 2px
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2)
+
+.siderbar
+  top: -1px
+  left: -1px
+  bottom: -1px
+  position: absolute
+  color: color-font-grey
+  width: layout-siderbar-width
+  background: color-siderbar-background
+
+#myAvatar
+  display: block
+  text-align: center
+  margin: 30px 0px 10px
+  img
+    width: 72px
+    height: 72px
+    padding: 3px
+    background: white
+    border-radius: 39px
+    
+#myName
+  text-align: center
+  margin-bottom: 20px
+    
+#main-menu
+  li
+    margin: 10px 0 10px
+    a
+      display: block
+      color: color-font-grey
+      padding: 10px 0 10px 56px
+      transition: 0.1s ease-out
+      i.fa
+        margin-right: 16px
+      i.arrow
+        opacity: 0
+        border: solid
+        display: block
+        margin-top: 1px
+        border-width: 8px 8px 8px 0
+        border-color: transparent color-main-background transparent
+    &:hover
+      a
+        color: color-link
+    &.active
+      a
+        color: color-link
+        background: color-siderbar-background-dark
+        i.arrow
+          opacity: 1
+
+.content
+  position: absolute
+  top: layout-titlebar-height
+  left: layout-siderbar-width
+  right: 0px
+  bottom: 0px
+  padding: 0px 15px 15px 15px
+  overflow-y: auto
+  & > div
+    padding-left: 10px
+    .title
+      font-size: font-size + 4
+      margin: 0 0 15px 0
+  .home
+    top: 0px
+    left: 0px
+    right: 0px
+    bottom: 0px
+    padding: 0px
+    position: absolute
+    .radial-progress,
+    .radial-progress .mask,
+    .radial-progress .circle .fill,
+    .radial-progress .inner,
+    .start
+      border-radius: 50%
+    .radial-progress
+      position: relative
+      &.outer, &.inner,
+      .mask, .circle .fill, .inner
+        position: absolute
+        -webkit-backface-visibility: hidden
+      .mask.full
+        transform: rotate(180deg)
+      .circle
+        .mask
+          background: color-background-grey
+          .fill
+            background: color-palette-info
+        .half .fill
+          transition: transform 0.3s linear
+      .inner
+        background: color-main-background
+    .main-progress
+      position: relative
+      margin: 20px auto
+      width: layout-outer-progress-radius
+      height: layout-outer-progress-radius
+      .outer
+        &.radial-progress,
+        &.radial-progress .mask,
+        &.radial-progress .circle .fill
+          width: layout-outer-progress-radius
+          height: layout-outer-progress-radius
+        &.radial-progress
+          .mask
+            clip: rect(0px, layout-outer-progress-radius, layout-outer-progress-radius, layout-outer-progress-radius/2)
+          .circle .fill
+            background: color-palette-success
+            clip: rect(0px, layout-outer-progress-radius/2, layout-outer-progress-radius, 0px)
+          .inner
+            top: layout-outer-progress-width
+            left: layout-outer-progress-width
+            right: layout-outer-progress-width
+            bottom: layout-outer-progress-width
+      .inner
+        top: 10px
+        left: 10px
+        &.radial-progress,
+        &.radial-progress .mask,
+        &.radial-progress .circle .fill
+          width: layout-inner-progress-radius
+          height: layout-inner-progress-radius
+        &.radial-progress
+          .mask
+            clip: rect(0px, layout-inner-progress-radius, layout-inner-progress-radius, layout-inner-progress-radius/2)
+          .circle .fill
+            clip: rect(0px, layout-inner-progress-radius/2, layout-inner-progress-radius, 0px)
+          .inner
+            top: layout-inner-progress-width
+            left: layout-inner-progress-width
+            right: layout-inner-progress-width
+            bottom: layout-inner-progress-width
+    .slide-board
+      top: 50%
+      left: 50%
+      overflow: hidden
+      position: absolute
+      text-align: center
+      .board
+        left: 0px
+        opacity: 0
+        width: 100%
+        height: 100%
+        position: absolute
+        transition: top 1s ease, opacity 0.2s linear
+        .percent, .state
+          font-family: font-default-light
+        &:first-child
+          top: 0px
+          opacity: 1
+        &:nth-child(2)
+          top: 100%
+        &:nth-child(3)
+          top: 200%
+        &:nth-child(4)
+          top: 300%
+      &.switch
+        .board
+          &:first-child
+            top: -100%
+            opacity: 0
+          &:nth-child(2)
+            top: 0px
+            opacity: 1
+          &:nth-child(3)
+            top: 100%
+          &:nth-child(4)
+            top: 300%
+    .main-progress
+      .slide-board
+        margin-top: -60px
+        margin-left: -110px
+        width: layout-slide-board-width
+        height: layout-slide-board-height
+        .board
+          h4
+            margin: 30px 0 10px
+            font-size: font-size + 2
+          .book-name
+            font-size: font-size + 6
+          .percent, .state
+            font-size: font-size + 20
+            line-height: font-size + 20
+      .start,
+      .start .start-inner
+        cursor: pointer
+        position: absolute
+      .start
+        top: 50%
+        left: 50%
+        opacity: 0
+        background: color-palette-danger
+        width: layout-start-button-radius
+        height: layout-start-button-radius
+        margin-top: - (layout-start-button-radius/2)
+        margin-left: - (layout-start-button-radius/2)
+        transition: opacity 0.5s ease, box-shadow 0.12s ease
+        &:active:hover
+          box-shadow: inset 0 3px 5px rgba(0,0,0,0.2)
+        .start-inner
+          top: 50%
+          left: 50%
+          margin-top: -52px
+          margin-left: -26px
+          border-style: solid
+          border-color: transparent
+          border-width: 55px 60px 55px 75px
+          border-left-color: color-background-light
+      &:hover
+        .start
+          opacity: 1
+          
+    .info-area
+      clearfix()
+      left: 0px
+      right: 0px
+      bottom: 0px
+      padding: 0 10px
+      position: absolute
+      .info-square
+        width: 20%
+        float: left
+        padding: 10px
+        text-align: center
+        box-sizing: border-box
+        .radial-progress,
+        .radial-progress .mask,
+        .radial-progress .circle .fill,
+        .info-square-inner
+          width: layout-mini-progress-radius
+          height: layout-mini-progress-radius
+        .radial-progress
+          position: relative
+          .mask
+            clip: rect(0px, layout-mini-progress-radius, layout-mini-progress-radius, layout-mini-progress-radius/2)
+          .circle .fill
+            background: color-palette-success
+            clip: rect(0px, layout-mini-progress-radius/2, layout-mini-progress-radius, 0px)
+          .inner
+            top: layout-mini-progress-width
+            left: layout-mini-progress-width
+            right: layout-mini-progress-width
+            bottom: layout-mini-progress-width
+            p
+              margin: 0px
+              line-height: layout-mini-progress-radius - layout-mini-progress-width * 2
+            .top, .bottom
+              line-height: 24px
+              font-size: font-size - 1
+            .top
+              margin-top: 18px
+            .bottom
+              margin: 0 6px
+              border-top: 1px solid color-border
+        .slide-board
+          left: 0px
+          margin-top: - (layout-slide-board-mini-height/2)
+          width: layout-slide-board-mini-width
+          height: layout-slide-board-mini-height
+          .board
+            h5
+              margin: 5px 0 5px
+            p
+              font-size: font-size + 8
+              line-height: font-size + 8
+              font-family: font-default-light
+      .unknown-rate
+        .radial-progress
+          .circle .fill
+            background: color-palette-warning
+          .inner
+            p
+              font-size: font-size + 4
+              font-family: font-default-light
+      .deadline
+        .info-square-inner
+          padding-top: 22px
+        span i
+          padding: 3px 5px
+          margin-right: 1px
+          font-style: normal
+          border-radius: 2px
+          color: color-font
+          font-family: font-default-light
+          background: color-background-grey
+        .year
+          display: block
+          margin-bottom: 15px
+          i
+            font-size: font-size + 1
+        .month, .day
+          i
+            font-size: font-size + 5
+      .study-time
+        .slide-board
+          .board
+            p
+              font-size: font-size
+      #changeDate
+        cursor: pointer
+  .wordlist
+    .wordlists
+      .wordlist-solo
+        clearfix()
+        &:first-child
+          .wordlist-title
+            margin-top: 10px
+        .wordlist-title
+          margin: 20px 0 15px
+          i
+            margin-right: 6px
+        .word
+          float: left
+          cursor: pointer
+          padding: 5px 10px
+          margin: 0 10px 10px 0
+          box-sizing: border-box
+          transition: 0.12s ease-in
+          border: 2px solid transparent
+          background: color-background-light
+          &:hover
+            color: color-link
+            border-radius: 3px
+            border-color: color-link
+  .books
+    .bookshelf
+      overflow: hidden
+      .bookshelf-title
+        font-size: font-size + 2
+        margin: 20px 0 15px
+        &:first-child
+          margin-top: 10px
+      .bookshelf-body
+        clearfix()
+        margin-right: -3%
+        .book
+          float: left
+          height: 60px
+          position: relative
+          box-sizing: border-box
+          transition: 0.12s ease-in
+          border: 2px solid transparent
+          background: color-background-light
+          div, span, .book-title
+            &:hover
+              cursor: pointer
+          span
+            font-size: font-size - 2
+            color: color-font-grey
+            margin-right: 5px
+          .foreground
+            z-index: 0
+            width: 100%
+            height: 100%
+            position: absolute
+          .text-container
+            display: block
+            position: absolute
+            left: 56px
+            top: 10px
+          .book-title
+            margin: 0px
+          .icon
+            top: 0px
+            left: 0px
+            width: 56px
+            font-size: 32px
+            line-height: 56px
+            position: absolute
+            text-align: center
+          .progress
+            top: -2px
+            left: -2px
+            z-index: 1
+            height: 60px
+            overflow: hidden
+            position: absolute
+            box-sizing: border-box
+            background: color-link
+            color: color-font-light
+            span
+              color: color-font-light
+            .text-container
+              width: 10000%
+              left: 58px
+              top: 12px
+            .icon
+              top: 2px
+              left: 2px
+          &:hover
+            border-radius: 3px
+            border-color: color-link
+            .progress
+              border-radius: 3px 0 0 3px
+              border: 2px solid color-link
+              border-right: 0px
+              .text-container
+                left: 56px
+                top: 10px
+              .icon
+                top: 0px
+                left: 0px
+  .leaderboard
+    .board
+      clearfix()
+      margin: 10px 0 20px
+      .board-title
+        font-size: font-size + 2
+        margin: 10px 0 15px
+      .list
+        .list-item
+          clearfix()
+          width: 100%
+          height: 40px
+          overflow: hidden
+          position: relative
+          border-radius: 2px
+          margin-bottom: 10px
+          background: color-background-light
+          .foreground,
+          .progress
+            width: 100%
+            height: 100%
+            padding: 10px 15px
+            position: absolute
+          .progress
+            background: color-link
+            color: color-font-light
+            .progress-inner
+              width: 1000%
+              position: absolute
+          span
+            margin-right: 6px
+            vertical-align: top
+          .index
+            width: 20px
+            color: color-link
+            line-height: 20px
+            margin-right: 10px
+            text-align: center
+            border-radius: 10px
+            display: inline-block
+            font-size: font-size - 2
+            background: color-background-light
+          .rank
+            line-height: line-height
+            em
+              margin-left: 4px
+              font-style: normal
+              font-family: font-default
+            &.rank-up:before
+              content: '\f135'
+            &.rank-down:before
+              content: '\f0e7'
+  .settings
+    .setting-col
+      margin: 20px 0px
+    .setting-col-header,
+    .setting-col-sub-header
+      margin: 0 0 10px 0
+    .setting-col-header
+      font-size: font-size + 2
+    .setting-col-sub-header
+      color: color-font-grey
+    .setting-col-body
+      clearfix()
+      .radio, .checkbox, .slider-handle
+        cursor: pointer
+      .radio, .checkbox
+        float: left
+        padding: 8px
+        border-radius: 2px
+        margin: 0px 8px 8px 0px
+        transition: 0.2s ease-in
+        min-width: 0px !important
+        border: 2px solid transparent
+        i
+          font-style: normal
+        &:hover
+          border-color: color-link
+        &.selected
+          background: color-link
+          i
+            color: color-font-light
+      .slider
+        background: color-border
+        width: 100%
+        height: 2px
+        margin 15px 0
+        position: relative
+        .slider-progress
+          background: color-link
+          width: 0px
+          height: 100%
+        .slider-handle
+          position: absolute
+          height: 16px
+          width: 16px
+          top: -8px
+          left: 0px
+          margin-left: -8px
+          border-radius: 12px
+          background: color-link
+          &:after,
+          &:before
+            opacity: 0
+            transition: 0.12s ease, left 0s
+          &:after
+            top: -30px
+            left: -12px
+            z-index: 1
+            width: 40px
+            padding: 5px
+            display: block
+            position: absolute
+            text-align: center
+            border-radius: 3px
+            white-space: nowrap
+            font-size: font-size - 1
+            color: color-font-light
+            content: attr(data-value)
+            background: color-palette-default
+            box-shadow: 0 0 2px rgba(0,0,0,0.2)
+          &:before
+            left: 4px
+            top: 0px
+            z-index: 2
+            content: ""
+            border: solid
+            display: block
+            position: absolute
+            border-width: 4px 4px 0 4px
+            border-color: color-palette-default transparent
+          &.dragging
+            width: 24px
+            height: 24px
+            top: -12px
+            margin-left: -12px
+            &:after,
+            &:before
+              opacity: 1
+            &:after
+              top: -40px
+              left: -8px
+            &:before
+              top: -10px
+              left: 8px
+      .btn
+        margin-right: 8px
+    .shortcut-key
+      .radio
+        i
+          display: block
+          float: left
+          width: 22px
+          line-height: 22px
+          border-radius: 2px
+          background: color-border
+          text-align: center
+          margin-right: 5px
+          font-size: font-size - 1
+          &:last-child
+            margin-right: 0px
+        &.selected
+          i
+            color: color-link
+            background: color-main-background
+
+#main-preloader
+  top: 0
+
+#authDialog
+  .modal-dialog
+    width: auto !important
+    margin-top: 120px
+    .modal-content
+      margin: 0 auto
+      width: 540px
+      height: 360px
+      .modal-body
+        background: color-main-background
+        position: relative
+        overflow: hidden
+        padding: 0px
+        width: 100%
+        height: 100%
+        .page, .preloader
+          position: absolute
+          top: 0px
+          width: 100%
+          height: 100%
+          .header
+            height: 260px
+          .footer
+            padding: 30px 0px
+            text-align: center
+            position: absolute
+            bottom: 0px
+            left: 0px
+            right: 0px
+            .btn
+              width: 180px
+              line-height: line-height
+              &:first-child
+                margin-right: 20px
+          .form-group
+            border-radius: 4px
+            margin: 0px 50px
+            border: 1px solid color-border
+            overflow: hidden
+            .form-control
+              height: 40px
+              padding-left: 40px
+              border-radius: 0px
+              border: none
+              position: relative
+              border-top: 1px solid color-border
+              &:first-child
+                border-top: none
+              &:before
+                position: absolute
+                top: 12px
+                left: 14px
+                font-size: font-size + 2
+              input
+                border: none
+                width: 100%
+                font-size: font-size
+                line-height: line-height
+        .preloader
+          left: 0px
+  .welcome
+    left: 0px
+    transition: 0.2s ease
+    &.out
+      left: -100%
+  .signup
+    left: 100%
+    padding: 0px
+    transition: 0.2s ease
+    &.in
+      left: 0px
+
+#word
+  .modal-dialog
+    width: 600px
+    margin-top: 160px
+    .modal-content
+      position: relative
+      .modal-body
+        min-height: 222px
+        .title
+          clearfix()
+          margin: 15px 0 15px 12px
+          h4
+            margin: 0
+            float: left
+            font-size: 32px
+            line-height: 46px
+            font-family: serif
+          .btn
+            float: right
+            transition: none
+            position: relative
+            .fa
+              font-size: font-size + 10
+              line-height: line-height + 4
+              transition: font-size 0.5s ease
+              transition: margin-right 0.5s ease
+            span
+              max-width: 0px
+              overflow: hidden
+              vertical-align: top
+              display: inline-block
+              height: line-height + 4
+              line-height: line-height + 4
+              transition: max-width 0.5s ease
+            &:hover
+              margin-left: 8px
+              background: color-link
+              .fa
+                margin-right: 8px
+                font-size: font-size + 6
+              span
+                max-width: 200px
+            &:active:hover
+              box-shadow: inset 0 3px 5px rgba(0,0,0,0.2)
+        .meaning, .example-wrap
+          margin-left: 12px
+        .example-wrap
+          border-left: 5px solid color-border
+          padding: 0 15px
+        .example
+          font-style: italic
+          font-family: serif
+          font-size: font-size + 6
+      .preloader
+        top: 0px
+        left: 0px
+        right: 0px
+        bottom: 0px
+        position: absolute
+
+#changeDeadline,
+#changeBook
+  .modal-dialog
+    width: 340px
+    margin: 100px auto
+    .modal-content
+      width: 340px
+      .modal-title
+        font-size: font-size + 2
+      .ui-datepicker
+        width: auto !important
+      .ui-datepicker-header
+        padding: 0px
+        .ui-corner-all
+          font: normal normal normal 14px/1 FontAwesome
+          line-height: 1.8em
+        .ui-icon
+          text-indent: 0px
+        .ui-state-disabled
+          color: color-font-grey
+        .ui-datepicker-title
+          line-height: line-height + 4
+        .ui-datepicker-next,
+        .ui-datepicker-prev
+          margin-top: 1px
+          top: 0px !important
+          height: line-height + 4
+          line-height: line-height + 4
+        .ui-datepicker-next
+          text-align: left
+          right: 0px !important
+          &:before
+            content: '\f0da'
+        .ui-datepicker-prev
+          text-align: right
+          left: 0px !important
+          &:before
+            content: '\f0d9'
+      .ui-datepicker-calendar
+        td
+          text-align: center
+          a, span
+            width: 24px
+            padding: 0px
+            line-height: 24px
+            text-align: center
+            border-radius: 12px
+            display: inline-block
+            font-size: font-size - 1
+            &.ui-state-active
+              color: color-font-light
+              background: color-link
+          span
+            color: color-font-grey
+
+#toWords
+  .modal-dialog
+    width: 640px
+    margin: 75px auto
+    .modal-content
+      width: 640px
+      height: 450px
+      overflow: hidden
+      font-family: serif, font-default
+  #study_inline,
+  #towordsLearning
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    position: absolute
+  #towordsLearning
+    padding: 30px
+    font-family: serif, font-default
+    .title
+      clearfix()
+      position: relative
+      margin-bottom: 30px
+      .word
+        float: left
+        margin-top: 10px
+        p
+          font-size: 54px
+          line-height: 54px
+          margin-bottom: 10px
+      span
+        margin-right: 8px
+      .buttons
+        top: 0px
+        right: 0px
+        height: 54px
+        overflow: hidden
+        margin-top: 10px
+        line-height: 54px
+        position: absolute
+        .btn
+          transition: none
+          position: relative
+          .fa
+            font-size: font-size + 10
+            line-height: line-height + 4
+            transition: font-size 0.5s ease
+            transition: margin-right 0.5s ease
+          span
+            max-width: 0px
+            overflow: hidden
+            vertical-align: top
+            display: inline-block
+            height: line-height + 4
+            line-height: line-height + 4
+            transition: max-width 0.5s ease
+          .regret_time
+            top: 0px
+            right: 0px
+            opacity: 1
+            width: 20px
+            height: 20px
+            display: block
+            font-size: 12px
+            line-height: 20px
+            position: absolute
+            text-align: center
+            font-style: normal
+            border-radius: 50%
+            transition: 0.5s ease
+            color: color-font-light
+            background: color-palette-danger
+          &:hover
+            margin-left: 8px
+            background: color-link
+            .fa
+              margin-right: 8px
+              font-size: font-size + 6
+            span
+              max-width: 200px
+            .regret_time
+              top: -30px
+              opacity: 0
+          &.disabled:active:hover
+            box-shadow: none
+          &.disabled
+            background: transparent
+            color: color-font-grey
+          &.disabled:hover
+            background: color-background-grey
+          &:active:hover
+            box-shadow: inset 0 3px 5px rgba(0,0,0,0.2)
+    .result
+      height: 100%
+    .options
+      & > div
+        cursor: pointer
+        padding: 15px 10px
+        span
+          font-size: font-size + 2
+          vertical-align: bottom
+          line-height: 24px
+        &:hover
+          background: color-link
+          color: color-font-light
+          .Shortcuts
+            margin: 0 20px 0 14px
+            color: color-link
+            background: color-background-light
+        &:active:hover
+          box-shadow: inset 0 3px 5px rgba(0,0,0,0.2)
+      .iknow
+        font-size: font-size + 6
+      .Shortcuts
+        width: 24px
+        height: 24px
+        text-align: center
+        margin-right: 16px
+        border-radius: 2px
+        display: inline-block
+        transition: margin 0.2s ease
+        background: color-background-grey
+        &:before
+          text-transform: uppercase
+    .translate
+      font-size: font-size + 4
+    .example
+      border-left: 5px solid color-border
+      padding-left: 15px
+      .sentense
+        font-size: font-size + 6
+        font-style: italic
+      .exp-translate
+        font-size: font-size + 2
+    .learningResult
+      left: 0px
+      right: 0px
+      opacity: 1
+      bottom: -40px
+      position: absolute
+      padding: 10px 15px
+      color: color-font-light
+      transition: bottom 0.2s ease, opacity 0.2s ease 2s
+    #timer
+      left: 0px
+      right: 0px
+      bottom: 0px
+      position: absolute
+      div
+        height: 3px
+        transition: background 0.5s ease
+    &.animate
+      .learningResult
+        opacity: 0
+        bottom: 0px
+
+.Shortcuts
+  &.s-a
+    &:before
+      content: 'a'
+  &.s-b
+    &:before
+      content: 'b'
+  &.s-c
+    &:before
+      content: 'c'
+  &.s-d
+    &:before
+      content: 'd'
+  &.s-f
+    &:before
+      content: 'f'
+  &.s-j
+    &:before
+      content: 'j'
+  &.s-k
+    &:before
+      content: 'k'
+  &.s-l
+    &:before
+      content: 'l'
+  &.s-s
+    &:before
+      content: 's'
+  &.s-1
+    &:before
+      content: '1'
+  &.s-2
+    &:before
+      content: '2'
+  &.s-3
+    &:before
+      content: '3'
+  &.s-4
+    &:before
+      content: '4'
+  &.s-fenhao
+    &:before
+      content: ';'
+  &.s-Up
+    &:before
+      content: '↑'
+  &.s-Down
+    &:before
+      content: '↓'
+  &.s-Left
+    &:before
+      content: '←'
+  &.s-Right
+    &:before
+      content: '→'

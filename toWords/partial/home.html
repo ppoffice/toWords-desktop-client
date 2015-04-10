@@ -1,0 +1,164 @@
+<div class="home">
+  <div class="main-progress">
+    <div class="radial-progress outer">
+      <div class="circle">
+        <div class="mask full">
+          <div class="fill"></div>
+        </div>
+        <div class="mask half">
+          <div class="fill"></div>
+        </div>
+      </div>
+      <div class="inner"></div>
+    </div>
+    <div class="radial-progress inner">
+      <div class="circle">
+        <div class="mask full">
+          <div class="fill"></div>
+        </div>
+        <div class="mask half">
+          <div class="fill"></div>
+        </div>
+        <div class="inner"></div>
+      </div>
+    </div>
+    <div class="slide-board">
+      <div class="book-info board">
+        <h4>您正在学习</h4>
+        <p class="book-name"></p>
+      </div>
+      <div class="current-state board">
+        <h4>目前处于</h4>
+        <p class="state"></p>
+      </div>
+      <div class="progress-today board">
+        <h4>今日学习进度</h4>
+        <p class="percent"></p>
+      </div>
+      <div class="progress-total board">
+        <h4>总学习进度</h4>
+        <p class="percent"></p>
+      </div>
+    </div>
+    <a class="start" id="start">
+      <span class="start-inner"></span>
+    </a>
+  </div>
+  <div class="info-area">
+    <div class="info-square unknown-rate">
+      <div class="radial-progress">
+        <div class="circle">
+          <div class="mask full">
+            <div class="fill"></div>
+          </div>
+          <div class="mask half">
+            <div class="fill"></div>
+          </div>
+          <div class="inner">
+            <p class="percent"></p>
+          </div>
+        </div>
+      </div>
+      <h5>拓前生词率</h5>
+    </div>
+    <div class="info-square total-words-learned">
+      <div class="radial-progress">
+        <div class="circle">
+          <div class="mask full">
+            <div class="fill"></div>
+          </div>
+          <div class="mask half">
+            <div class="fill"></div>
+          </div>
+          <div class="inner">
+            <div class="slide-board">
+              <div class="board">
+                <h5>总共</h5>
+                <p class="words-total"></p>
+              </div>
+              <div class="board">
+                <h5>掌握</h5>
+                <p class="words-learned"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h5>总单词数</h5>
+    </div>
+    <div class="info-square deadline">
+      <div class="info-square-inner" id="changeDate" >
+        <span class="year"></span>
+        <span class="month"></span>
+        <span class="day"></span>
+      </div>
+      <h5>完成日期</h5>
+    </div>
+    <div class="info-square today-words-learned">
+      <div class="radial-progress">
+        <div class="circle">
+          <div class="mask full">
+            <div class="fill"></div>
+          </div>
+          <div class="mask half">
+            <div class="fill"></div>
+          </div>
+          <div class="inner">
+            <div class="slide-board">
+              <div class="board">
+                <h5>总共</h5>
+                <p class="words-total"></p>
+              </div>
+              <div class="board">
+                <h5>掌握</h5>
+                <p class="words-learned"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h5>今日学习</h5>
+    </div>
+    <div class="info-square study-time">
+      <div class="radial-progress">
+        <div class="circle">
+          <div class="mask full">
+            <div class="fill"></div>
+          </div>
+          <div class="mask half">
+            <div class="fill"></div>
+          </div>
+          <div class="inner">
+            <div class="slide-board">
+              <div class="board">
+                <h5>已学习</h5>
+                <p class="time-learned"></p>
+              </div>
+              <div class="board">
+                <h5>建议学习</h5>
+                <p class="time-total"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h5>今日拓时</h5>
+    </div>
+  </div>
+  <div class="modal fade" id="changeDeadline">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">选择完成日期</h4>
+        </div>
+        <div class="modal-body">
+          <div id="datepicker"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" id="save">保存</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 # 拓词桌面客户端（非官方）
-![Logo](/toWords/css/images/logo.png)
+![Logo](https://github.com/ppoffice/toWords-desktop-client/blob/master/toWords/css/images/logo.png?raw=true)
 
 ## 简介
 [拓词](http://www.towords.com/)是一款在线英语学习产品，本软件在基于网络版的数据的同时重新设计了用户界面，方便拓词用户使用。
@@ -10,15 +10,15 @@
 
 ## 软件截图
 
-![Screenshot 1](/screenshots/screenshots1.png)
+![Screenshot 1](https://github.com/ppoffice/toWords-desktop-client/blob/master/screenshots/screenshot1.png?raw=true)
 
-![Screenshot 2](/screenshots/screenshots2.png)
+![Screenshot 2](https://github.com/ppoffice/toWords-desktop-client/blob/master/screenshots/screenshot2.png?raw=true)
 
-![Screenshot 3](/screenshots/screenshots3.png)
+![Screenshot 3](https://github.com/ppoffice/toWords-desktop-client/blob/master/screenshots/screenshot3.png?raw=true)
 
-![Screenshot 4](/screenshots/screenshots4.png)
+![Screenshot 4](https://github.com/ppoffice/toWords-desktop-client/blob/master/screenshots/screenshot4.png?raw=true)
 
-![Screenshot 5](/screenshots/screenshots5.png)
+![Screenshot 5](https://github.com/ppoffice/toWords-desktop-client/blob/master/screenshots/screenshot5.png?raw=true)
 
 ## 已知问题
 

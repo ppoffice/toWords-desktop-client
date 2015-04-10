@@ -1,0 +1,63 @@
+<div class="modal fade" id="authDialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="preloader"></div>
+        <div class="page welcome">
+          <div id="header">
+            <div class="logo"></div>
+            <div class="form-group">
+              <div class="form-control fa fa-envelope"><input type="text" name="email" id="login-email" placeholder="邮箱/手机号" /></div>
+              <div class="form-control fa fa-key"><input type="password" name="password" id="login-password" placeholder="密码" /></div>
+            </div>
+          </div>
+          <div class="footer">
+            <button class="btn btn-large btn-success" id="signup">注册</button>
+            <button class="btn btn-large btn-info" id="login">登录</button>
+          </div>
+        </div>
+        <div class="page signup">
+          <div class="header">
+            <div class="logo logo-small"></div>
+            <div class="form-group">
+              <div class="form-control fa fa-envelope"><input type="text" name="email" id="signup-email" placeholder="邮箱" /></div>
+              <div class="form-control fa fa-key"><input type="password" name="password" id="signup-password" placeholder="密码" /></div>
+              <div class="form-control fa fa-flag"><input type="text" name="nickname" id="signup-nickname" placeholder="昵称" /></div>
+            </div>
+          </div>
+          <div class="footer">
+            <button class="btn btn-large btn-inverse" id="signup-return">返回</button>
+            <button class="btn btn-large btn-info" id="signup-submit">注册</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  (function () {
+    var auth = require('./' + config.auth);
+    $('#authDialog #signup-return').on('click', function(){
+      $('#authDialog .welcome').removeClass('out');
+      $('#authDialog .signup').removeClass('in');
+    });
+    $('#authDialog #login').on('click', function(){
+      $('.preloader').addClass('on');
+      auth.login($('#login-email').val(), $('#login-password').val(), function(success) {
+        $('.preloader').removeClass('on');
+        if(success) {
+          ui.hideAuthDialog();
+          app.init();
+        } else
+          ui.showAlertTip('danger', '登录失败，请重试', 2000);
+      });
+    });
+    $('#authDialog #signup').on('click', function(){
+      hex.openExternal('http://www.towords.com/register.jsp');
+    });
+    // $('#authDialog #signup').on('click', function(){
+    //   $('#authDialog .welcome').addClass('out');
+    //   $('#authDialog .signup').addClass('in');
+    // });
+  })(jQuery);
+</script>
