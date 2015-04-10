@@ -1,26 +1,24 @@
 # 拓词桌面客户端（非官方）
 ![Logo](/toWords/css/images/logo.png)
 
-By [PPOffice](https://github.com/ppoffice/).
-
 ## 简介
 [拓词](http://www.towords.com/)是一款在线英语学习产品，本软件在基于网络版的数据的同时重新设计了用户界面，方便拓词用户使用。
 
 ## 安装
 
-直接单击本页面右侧的*Download ZIP*下载软件压缩包，解压后运行toWords.exe即可。
+直接单击本页面右侧的**Download ZIP**下载软件压缩包，解压后运行toWords.exe即可。
 
 ## 软件截图
 
-![Screenshot 1](/toWords/screenshots/screenshots1.png)
+![Screenshot 1](/screenshots/screenshots1.png)
 
-![Screenshot 2](/toWords/screenshots/screenshots2.png)
+![Screenshot 2](/screenshots/screenshots2.png)
 
-![Screenshot 3](/toWords/screenshots/screenshots3.png)
+![Screenshot 3](/screenshots/screenshots3.png)
 
-![Screenshot 4](/toWords/screenshots/screenshots4.png)
+![Screenshot 4](/screenshots/screenshots4.png)
 
-![Screenshot 5](/toWords/screenshots/screenshots5.png)
+![Screenshot 5](/screenshots/screenshots5.png)
 
 ## 已知问题
 
